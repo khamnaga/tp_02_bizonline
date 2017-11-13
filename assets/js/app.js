@@ -29,39 +29,44 @@
   // console.log(p1);
 
   function createProduct() {
-    var newProduct = new Product({
-      name: document.getElementById('name').value,
-      price: document.getElementById('price').value + "euros",
-      description: document.getElementById('description').value
-    });
+
+    if (typeof name === "string" && typeof price === "number" && typeof description === "string") {
+        newProduct = new Product({
+        name: document.getElementById('name').value,
+        price: document.getElementById('price').value,
+        description: document.getElementById('description').value
+      });
+    } else {
+      alert("Please enter the informations again.");
+    }
     storeProduct();
+    document.getElementById("fa1").onclick = deleteProduct;
+    console.log(newProduct);
     document.getElementById('name').value = "";
     document.getElementById('price').value = "";
     document.getElementById('description').value = "";
-    console.log(newProduct);
     console.log(tableau);
 
   }
 
   function storeProduct() {
-    document.querySelector("tbody").innerHTML += `<tr><td>${tableau.length + 1}</td><td>${document.getElementById('name').value}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><i class="fa fa-info-circle" aria-hidden="true"></i></td><td><i class="fa fa-trash" aria-hidden="true"></i></td></tr>`;
+    document.querySelector("tbody").innerHTML += `<tr id="tr${tableau.length + 1}"><td>${tableau.length + 1}</td><td>${document.getElementById('name').value}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><i class="fa fa-info-circle" aria-hidden="true"></i></td><td><i id="fa${tableau.length+1}" class="fa fa-trash" aria-hidden="true"></i></td></tr>`;
     tableau.push(newProduct);
   }
 
-  function clickProduct() {
+  function clickCreateProduct() {
     document.getElementById("validate").onclick = createProduct;
-    document.querySelectorAll(".fa-trash").onclick = deleteProduct;
   }
 
-
-
   function deleteProduct() {
-    document.querySelectorAll("")
+    document.getElementById("tr1").classList.toggle("none-display")
   }
 
   window.onload = function () {
-    clickProduct();
-
+    clickCreateProduct();
+    console.log(tableau);
+    console.log(document.getElementById("tr1"));
+    console.log(document.getElementById("fa1"));
   }
 
 }());

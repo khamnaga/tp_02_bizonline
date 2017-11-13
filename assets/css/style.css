@@ -17,3 +17,7 @@ table, th, td {
   height: 1vh;
   width: 1vw;
 }
+
+.none-display {
+  display: none;
+}
