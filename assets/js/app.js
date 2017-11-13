@@ -44,18 +44,23 @@
   }
 
   function storeProduct() {
-    document.getElementById("table").innerHTML = `<tr><td>${document.getElementById('name').value}</td></tr>`;
+    document.querySelector("tbody").innerHTML += `<tr><td>${tableau.length + 1}</td><td>${document.getElementById('name').value}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><i class="fa fa-trash" aria-hidden="true"></i></td></tr>`;
     tableau.push(newProduct);
   }
 
-  function validateProduct() {
+  function clickProduct() {
     document.getElementById("validate").onclick = createProduct;
+    document.querySelectorAll(".supprimer").onclick = deleteProduct;
   }
 
 
 
+  function deleteProduct() {
+    document.querySelectorAll("")
+  }
+
   window.onload = function () {
-    validateProduct();
+    clickProduct();
 
   }
 

@@ -12,3 +12,8 @@ table, th, td {
   border: 2px solid;
   border-collapse: collapse;
 }
+
+.supprimer {
+  height: 1vh;
+  width: 1vw;
+}
