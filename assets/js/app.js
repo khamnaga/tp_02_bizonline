@@ -34,23 +34,28 @@
       price: document.getElementById('price').value + "euros",
       description: document.getElementById('description').value
     });
+    storeProduct();
+    document.getElementById('name').value = "";
+    document.getElementById('price').value = "";
+    document.getElementById('description').value = "";
+    console.log(newProduct);
+    console.log(tableau);
+
   }
 
   function storeProduct() {
+    document.getElementById("table").innerHTML = `<tr><td>${document.getElementById('name').value}</td></tr>`;
     tableau.push(newProduct);
   }
 
   function validateProduct() {
-
+    document.getElementById("validate").onclick = createProduct;
   }
 
 
 
   window.onload = function () {
-
-    console.log(createProduct());
-
-
+    validateProduct();
 
   }
 
