@@ -34,10 +34,13 @@
       price: document.getElementById('price').value + "euros",
       description: document.getElementById('description').value
     });
+    console.log(newProduct);
+    storeProduct();
   }
 
   function storeProduct() {
     tableau.push(newProduct);
+    console.log(tableau);
   }
 
   function validateProduct() {
@@ -48,7 +51,7 @@
 
   window.onload = function () {
 
-    console.log(createProduct());
+    createProduct();
 
 
 

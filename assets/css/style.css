@@ -7,3 +7,8 @@ input {
   height: 10vh;
   width: 40vw;
 }
+
+table, th, td {
+  border: 2px solid;
+  border-collapse: collapse;
+}
