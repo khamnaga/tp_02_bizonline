@@ -59,18 +59,18 @@
     deleteBtns = document.querySelectorAll(".fa-trash");
     table_rows = document.querySelectorAll(".table_rows");
     console.log(deleteBtns);
-    for (j=0; j<deleteBtns.length; j+=1) {
-      deleteBtns[j].onclick = deleteProduct;
-    }
     console.log(newProduct);
     //document.getElementById("name").oninput = selectNameValue;
     console.log(tableau);
     console.log(this);
+  //  console.log("--------elemparenteElement--------------");
+    attachDeleteBtnsToRows();
   }
-
 
   function storeProduct() {
     document.querySelector("tbody").innerHTML += `<tr id="tr${tableau.length + 1}" class="table_rows"><td>${newProduct.reference}</td><td>${newProduct.name}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><i class="fa fa-info-circle" aria-hidden="true"></i></td><td><i id="fa${tableau.length+1}" class="fa fa-trash" aria-hidden="true"></i></td></tr>`;
+    console.log(document.querySelector("tbody"));
+;
   }
 
   function clickCreateProduct() {
@@ -78,7 +78,25 @@
   }
 
   function attachDeleteBtnsToRows() {
+    console.log("-------attach--------");
+    console.log(this);
+    for (j=0; j<deleteBtns.length; j+=1) {
+      deleteBtns[j].onclick = deleteRows;
+    }
+  }
 
+  function deleteRows(num) {
+    console.log("-----deleteRows------");
+    this.parentElement.parentElement.remove();
+    console.log(this.parentElement.parentElement.firstChild.textContent);
+    delete tableau[this.parentElement.parentElement.firstChild.textContent-1];
+    console.log(tableau[0]);
+    console.dir(tableau);
+    console.log("------apressuppression---------");
+    console.log(this);
+    console.log("----thistableau-----");
+    console.log(tableau[this]);
+    console.log(tableau);
   }
 
   function deleteProduct(evt) {
@@ -87,15 +105,16 @@
       console.log(tableau[k]);
   }*/
   var source = evt.target;
+  console.log("-----------------log de this dans delete-------------");
   console.log(this);
   console.log(source.id);
   console.log(newProduct);
   console.log(newProduct.reference);
-    for (k=0; k<table_rows.length; k++) {
+/*    for (k=0; k<table_rows.length; k++) {
       if (Product.reference) {
         source.onclick = table_rows[k].classList.add("none-display");
       }
-}
+}*/
   console.log(table_rows);
   /*var k;
     if (deleteBtns[k] === source) {
@@ -112,6 +131,7 @@
     console.log(document.getElementById("tr1"));
     console.log(document.getElementById("fa1"));
     console.log(document.getElementById("name"));
+    console.log(document.querySelector("table").rows);
   }
 
 }());
