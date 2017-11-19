@@ -1,23 +1,314 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', serif;
+  /*font:100 5rem/1 Roboto;*/
 }
 
-input {
-  height: 10vh;
-  width: 40vw;
+#buttons {
+  text-align: center;
+}
+
+button.item {
+  width: 400px;
+  height: 110px;
+  border-radius: 40px;
+  border: none;
+  border: 4px solid #24C19A;
+  color: black;
+  margin-top: 200px;
+  background: white;
+  cursor: pointer;
+}
+
+button.item:hover {
+  color: white;
+  background: #24C19A;
+  transition: 0.3s;
+}
+
+div.wrapper {
+  width: 1200px;
+  max-width: 1200px;
+  min-width: 980px;
+  margin: auto;
+}
+
+img.position {
+  margin-right: 242px;
+  float: left;
+}
+
+section.main-page {
+  width: 100vw;
+  height: 100vh;
+  background: url("/assets/img/warehouse.jpg") 0 0 no-repeat;
+  background-size: cover;
+  /*background: white;*/
+}
+
+section.main-page img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+figure.animate {
+  padding-top: 195px;
+  margin: auto;
+  height: 310px;
+}
+
+h2 {
+  font-size: 35px;
+  color: snow;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+p.people {
+  font-family: 'Glegoo', serif;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}
+
+div#mission {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+form {
+  width: 380px;
+  /*margin:50px auto;*/
+  height: 660px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 4px 15px 25px black;
+  padding: 20px;
+}
+
+#name, #price, #description,
+#img, #color, #weight {
+  color:white;
+  /*font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;*/
+  font-size: 14px;
+  border-radius: 5px;
+  line-height: 30px;
+  background: transparent;
+  border: 1.5px solid black;
+  transition: 0.3s;
+  padding: 13px;
+  margin-top: 7px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+#name:focus, #price:focus, #description:focus,
+#img:focus, #color:focus, #weight:focus {
+  border: 1.5px solid #24C19A;
+}
+
+[type="submit"] {
+  width: 100%;
+  background: #24C19A;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:black;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top: 8px;
+  font-weight:700;
+}
+[type="submit"]:hover {
+  color: #24C19A;
+  background:black;
+}
+
+section.inputs {
+  width: 38vw;
+  height: 100vh;
+  padding-top: 40px;
+  padding: 7% 8% 8%;
+  float: left;
+  box-sizing: border-box;
+}
+
+section.list {
+  width: 62vw;
+  height: 100vh;
+  padding-top: 40px;
+  padding: 7% 8% 8%;
+  float: left;
+  box-sizing: border-box;
+}
+
+section.inputs {
+  background: #24C19A;
+  margin: 0 auto;
+}
+
+section.list {
+  background: white;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+section.list h2 {
+  color: black;
+}
+
+table {
+  width: 100%;
+  margin-top: -22px;
 }
 
 table, th, td {
   border: 2px solid;
   border-collapse: collapse;
+  background: white;
+  padding: 20px;
 }
 
-.supprimer {
-  height: 1vh;
-  width: 1vw;
+table tbody:nth-of-type(2n+1) {
+  background: #24C19A;
 }
 
-.none-display {
+footer {
+  width: 100%;
+  color: black;
+  height: 80px;
+  background: white;
+  box-sizing: border-box;
+}
+
+div.info_left, div.info_right {
+  width: 50%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+/*================== POP UP Fiche Product =========================*/
+div.lightbox {
   display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.lightbox:target {
+  display: table;
+}
+
+div.lightbox figure {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+div.lightbox figure figcaption {
+  display: block;
+  margin: auto;
+  padding: 8px;
+  background: white;
+  height: 75vh;
+  position: relative;
+  overflow: auto;
+  border: 1px #000000 solid;
+  border-radius: 10px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+div.lightbox figure .close {
+  display: block;
+  margin: auto;
+  height: 0;
+  overflow: visible;
+  text-align: right;
+  z-index: 2;
+  cursor: default;
+}
+
+div.lightbox figure .close, div.lightbox figure figcaption {
+  width: 60vw;
+}
+
+.close::after {
+  content: "\00D7";
+  display: inline-block;
+  position: relative;
+  right: -20px;
+  top: -10px;
+  z-index: 3;
+  color: #ffffff;
+  border: 1px #ffffff solid;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  text-align: center;
+  margin: 0;
+  background-color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close::before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.85;
+}
+
+div.img-product, div.info-product {
+  height: 100%;
+  float: left;
+}
+
+div.img-product {
+  width: 45%;
+  background: #24C19A;
+}
+
+div.img-product figure {
+  width: 80%;
+  height: 60%;
+  float: left;
+}
+
+div#contour {
+  padding: 20px;
+  border: 3px solid black;
+}
+
+div.info-product {
+  width: 55%;
+}
+
+div.info-product h2, div.info-product p {
+  text-align: center;
 }
