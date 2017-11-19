@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <script src="assets/js/app.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="node_modules/font-awesome/css/font-awesome.min.css"></script>
   <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
+  <script src="assets/js/app.js"></script>
   <title>Bizonline</title>
 </head>
 <body>
@@ -14,14 +14,14 @@
   <section class="main-page">
     <figure class="animate">
         <img src="assets/img/logo_bizonline.png" alt="Bizonline" title="site">
-      <div class="wrapper">
-
-
-      </div>
+      <div class="wrapper"></div>
     </figure>
       <div id="buttons">
         <a href="#mission">
-          <button data-target="mission" class="item">CREATE A NEW PRODUCT</button>
+          <button data-target="mission" class="item"><p>CREATE A NEW PRODUCT</p></button>
+        </a>
+        <a href="about.html">
+          <button class="item"><p>ABOUT US</p></button>
         </a>
       </div>
   </section>
@@ -36,13 +36,13 @@
       <label>Price:</label>
       <input id="price" type="text" name="price" placeholder="Enter price" maxlength="30"><br>
       <label>Description:</label>
-      <input id="description" type="text" name="description" placeholder="Saisir nom" maxlength="140" rows="3" cols="3"><br>
+      <input id="description" type="text" name="description" placeholder="Enter description" maxlength="140" rows="3" cols="3"><br>
       <label>Image:</label>
       <input id="img" type="file" name="img" placeholder="upload file" maxlength="30"><br>
       <label>Color:</label>
-      <input id="color" type="text" name="color" placeholder="Saisir nom" maxlength="30"><br>
+      <input id="color" type="text" name="color" placeholder="Choose color" maxlength="30"><br>
       <label>Weight:</label>
-      <input id="weight" type="text" name="weight" placeholder="Saisir nom" maxlength="30"><br>
+      <input id="weight" type="text" name="weight" placeholder="Enter weight" maxlength="30"><br>
 
       <input id="validate" type="submit">
       </form>
@@ -73,7 +73,7 @@
     </table>
 
 
-    <a href="#fiche_product">Fiche Product</a></p>
+    <a href="#fiche_product">Fiche Product</a>
     <div class="lightbox" id="fiche_product">
       <figure>
           <a href="#" class="close"></a>

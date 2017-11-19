@@ -9,19 +9,30 @@
   text-align: center;
 }
 
-button.item {
+#buttons p {
+  font-size: 22px;
+}
+
+button.item, button.item-1 {
   width: 400px;
   height: 110px;
   border-radius: 40px;
   border: none;
   border: 4px solid #24C19A;
   color: black;
-  margin-top: 200px;
   background: white;
   cursor: pointer;
 }
 
-button.item:hover {
+button.item {
+  margin: 200px 50px 0;
+}
+
+button.item-1 {
+  margin-top: 70px;
+}
+
+button.item:hover, button.item-1:hover {
   color: white;
   background: #24C19A;
   transition: 0.3s;
@@ -39,18 +50,22 @@ img.position {
   float: left;
 }
 
-section.main-page {
+section.main-page, section.about-page {
   width: 100vw;
   height: 100vh;
-  background: url("/assets/img/warehouse.jpg") 0 0 no-repeat;
-  background-size: cover;
-  /*background: white;*/
 }
 
 section.main-page img {
   width: 80%;
   display: block;
   margin: auto;
+}
+
+section.about-page h3 {
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  margin: 40px auto;
 }
 
 figure.animate {
@@ -66,19 +81,42 @@ h2 {
   margin-bottom: 5%;
 }
 
-p.people {
-  font-family: 'Glegoo', serif;
-  color: white;
-  text-align: center;
-  padding-top: 60px;
-}
-
 div#mission {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
 }
 
+/* About page */
+div#bios {
+  width: 100vw;
+  height: 60vh;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+div#bios h2 {
+  color: black;
+}
+
+div.bio-1, div.bio-2 {
+  width: 35%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+div.bio-1 {
+  background: orange;
+  margin-left: 13.6%;
+}
+
+div.bio-2 {
+  background: lightgray;
+  margin-left: 3%;
+}
+
+/* Formulaire de saisie d'un Product */
 form {
   width: 380px;
   /*margin:50px auto;*/
@@ -91,9 +129,7 @@ form {
 
 #name, #price, #description,
 #img, #color, #weight {
-  color:white;
-  /*font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;*/
+  color: black;
   font-size: 14px;
   border-radius: 5px;
   line-height: 30px;
@@ -182,10 +218,14 @@ table tbody:nth-of-type(2n+1) {
 
 footer {
   width: 100%;
-  color: black;
+  color: white;
   height: 80px;
-  background: white;
+  background: black;
   box-sizing: border-box;
+}
+
+footer p {
+  margin-top: 3%;
 }
 
 div.info_left, div.info_right {
@@ -194,11 +234,22 @@ div.info_left, div.info_right {
   float: left;
   text-align: center;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+div.info_right {
+  padding-top: 1.8%;
 }
 
 footer a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+footer a:hover {
+  text-decoration: none;
+  transition: 0.3s;
+  color: #24C19A;
 }
 
 /*================== POP UP Fiche Product =========================*/

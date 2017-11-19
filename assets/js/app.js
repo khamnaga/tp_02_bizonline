@@ -1,4 +1,6 @@
-(function bizOnline () {
+/** @namespace */
+
+const app = (function bizOnline () {
 
   "use strict";
 
@@ -11,7 +13,8 @@
   var deleteBtns;
 
 /**
- * [Product description]
+ * Une fonction constructeur pour créer des produits
+ * @alias app.Product
  * @param       {[type]} info [description]
  * @constructor
  */
@@ -26,10 +29,13 @@
     this.weight = info.weight;
   }
 
-/**
- * [createProduct description]
- * @return {[type]} [description]
- */
+  /**
+   * Une fonction permettant de créer des instances du constructeur Product
+   * @author richard.p
+   * @alias app.createProduct
+   * @return {object} une instance est crée avec ses propriétés en clé: valeur
+   */
+
 
   function createProduct() {
         newProduct = new Product({
@@ -50,18 +56,23 @@
     attachDeleteBtnsToRows();
   }
 
-  /**
-   * [storeProduct description]
-   * @return {[type]} [description]
+  /**Une fonction ajoutant des lignes avec cellules au tableau HTML
+   * @alias app.storeProduct
+   * @author adami0
+   * @return {undefined} [description]
    */
 
   function storeProduct() {
-    document.querySelector("tbody").innerHTML += `<tr id="tr${tableau.length + 1}" class="table_rows"><td>${newProduct.reference}</td><td>${newProduct.name}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><i class="fa fa-info-circle" aria-hidden="true"></i></td><td><i id="fa${tableau.length+1}" class="fa fa-trash" aria-hidden="true"></i></td></tr>`;
+    document.querySelector("tbody").innerHTML += `<tr id="tr${tableau.length + 1}" class="table_rows"><td>${newProduct.reference}</td><td>${newProduct.name}</td><td>${document.getElementById('price').value}</td><td>${document.getElementById('description').value}</td><td><a href="#fiche_product"><img src="assets/img/icon_info.png"></a></td><td><img class="fa-trash" src="assets/img/icon_bin.png"></td></tr>`;
 }
 
 /**
- * [attachDeleteBtnsToRows description]
- * @return {[type]} [description]
+ * Une fonction permettant d'associer l'icone supprimer à cette fonction,
+ * cette même fonction fait appel à deleteRows() et
+ * la row est ainsi supprimée du HTML ainsi que l'objet du tableau dans app.js
+ * @author richard.p
+ * @alias app.attachDeleteBtnsToRows
+ * @return {undefined}
  */
 
   function attachDeleteBtnsToRows() {
@@ -72,7 +83,9 @@
   }
 
 /**
- * [clickCreateProduct description]
+ * Une fonction pour lier les boutons générés à un clic qui redirige vers la fonction createProduct
+ * @alias app.clickCreateProduct
+ * @author adami0
  * @return {[type]} [description]
  */
 
@@ -80,10 +93,14 @@
     document.getElementById("validate").onclick = createProduct;
   }
 
-/**
- * [deleteRows description]
- * @return {[type]} [description]
- */
+  /**
+   * Cette fonction est appelée au sein de attachDeleteBtnsToRows,
+   * le textContent du td ref de l'objet -1 sera lié à l'index de l'objet du tableau
+   * et pourra être supprimé.
+   * @author richard.p
+   * @alias app.deleteRows
+   * @return {}
+   */
 
   function deleteRows() {
     var answer = confirm("Do you really want to delete this product? Ok to confirm");
@@ -94,58 +111,6 @@
   }
   else {alert("The selected product wasn't removed.")};
   }
-
-/*  function attachModifyBtnsToRows() {
-    modifyBtns = document.querySelectorAll(".modify");
-    for(var k=0; k<modifyBtns.length; k+=1) {
-      modifyBtns[k].onclick = modifyRows;
-    }
-    console.log(this);
-    console.log(tableau[this.parentElement.parentElement.firstChild.textContent-1]);
-  }
-
-/**
- * [modifyRows description]
- * @return {[type]} [description]
- */
-
-  function modifyRows() {
-    console.log("------modify-----");
-    console.log(this); // THE THIS MAUX DE TÊTES!!!!!
-    console.log(this.parentElement.childNodes[1]);
-    console.log(this.parentElement.childNodes);
-    this.parentElement.childNodes[1].innerHTML = `<input type=text placeholder=${this.parentElement.childNodes[1].textContent}>`;
-    this.parentElement.childNodes[2].innerHTML = `<input type=text placeholder=${this.parentElement.childNodes[2].textContent}>`;
-    this.parentElement.childNodes[3].innerHTML = `<input type=text placeholder=${this.parentElement.childNodes[3].textContent}>`;
-    this.parentElement.childNodes[5].innerHTML = `<td>cliquer ici afin de valider les modifications</td>`;
-    console.log(this);
-    console.log(test);
-    this.parentElement.childNodes[5].onclick = recuperateInputValues;
-  }
-
-/**
- * [recuperateInputValues description]
- * @return {[type]} [description]
- */
-
-  function recuperateInputValues() {
-    console.log(this.parentElement.childNodes);
-    test = this.parentElement.childNodes[1].oninput;
-    for (var m=1; m<this.parentElement.childNodes.length-3; m+=1) {
-      if (this.parentElement.childNodes[m].textContent != this.parentElement.childNodes[m].firstChild.value) {
-        this.parentElement.childNodes[m].textContent = this.parentElement.childNodes[m].firstChild.value;
-        console.log("true");
-      } else {
-        console.log("false");
-      }
-    }
-  }
-*/
-
-/**
- * [description]
- * @return {[type]} [description]
- */
 
   window.onload = function () {
     clickCreateProduct();
