@@ -2,59 +2,115 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="assets/js/app.js"></script>
-  <script src="https://use.fontawesome.com/aec42f2c14.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="node_modules/font-awesome/css/font-awesome.min.css"></script>
+  <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
   <title>Bizonline</title>
 </head>
 <body>
-  <h1>Bizonline</h1>
 
-  <div class="wrapper">
+  <section class="main-page">
+    <figure class="animate">
+        <img src="assets/img/logo_bizonline.png" alt="Bizonline" title="site">
+      <div class="wrapper">
 
-    <div class="wrapper_input">
 
+      </div>
+    </figure>
+      <div id="buttons">
+        <a href="#mission">
+          <button data-target="mission" class="item">CREATE A NEW PRODUCT</button>
+        </a>
+      </div>
+  </section>
+
+  <div id="mission">
+    <section class="inputs">
+      <h2>CREATE A PRODUCT</h2>
+
+      <form action="">
       <label>Name:</label>
-      <input id="name" type="text" name="name" placeholder="Saisir nom" maxlength="30">
+      <input id="name" type="text" name="name" placeholder="Enter name" maxlength="30"><br>
       <label>Price:</label>
-      <input id="price" type="text" name="price" placeholder="Saisir nom" maxlength="30">
+      <input id="price" type="text" name="price" placeholder="Enter price" maxlength="30"><br>
       <label>Description:</label>
-      <input id="description" type="text" name="description" placeholder="Saisir nom" maxlength="140" rows="3" cols="3">
+      <input id="description" type="text" name="description" placeholder="Saisir nom" maxlength="140" rows="3" cols="3"><br>
       <label>Image:</label>
-      <input id="img" type="text" name="img" placeholder="Saisir nom" maxlength="30">
+      <input id="img" type="file" name="img" placeholder="upload file" maxlength="30"><br>
       <label>Color:</label>
-      <input id="color" type="text" name="color" placeholder="Saisir nom" maxlength="30">
+      <input id="color" type="text" name="color" placeholder="Saisir nom" maxlength="30"><br>
       <label>Weight:</label>
-      <input id="weight" type="text" name="weight" placeholder="Saisir nom" maxlength="30">
+      <input id="weight" type="text" name="weight" placeholder="Saisir nom" maxlength="30"><br>
 
-      <input id="validate" type="button">
+      <input id="validate" type="submit">
+      </form>
+    </section>
+
+    <section class="list">
+      <h2>LIST OF ALL THE PRODUCTS</h2>
+      <table>
+        <thead>
+        <tr>
+          <th colspan="8">Products List</th>
+        </tr>
+        <tr>
+          <th>ref</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>reference</td>
+          <td>product's name</td>
+          <td>product's price</td>
+          <td>product's description</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <a href="#fiche_product">Fiche Product</a></p>
+    <div class="lightbox" id="fiche_product">
+      <figure>
+          <a href="#" class="close"></a>
+          <figcaption>
+            <div class="img-product">
+              <figure>
+                <img src="" alt="">
+              </figure>
+            </div>
+            <div class="info-product">
+              <div id="contour">
+                <h2>Product Name</h2>
+                <h2>Product Price</h2>
+                <h2>Product Description</h2>
+                <h2>Product color</h2>
+                <h2>Product weight</h2>
+              </div>
+            </div>
+          </figcaption>
+
+      </figure>
 
     </div>
 
+    </section>
   </div>
+  <footer>
+    <div class="info_left">
+      <p>TP réalisé par Adam &amp; Richard</p>
+    </div>
+    <div class="info_right">
+      <a href="https://github.com/khamnaga/tp_02_bizonline" target="_new">
+        <i class="fa fa-github fa-2x" aria-hidden="true">Github</i>
+      </a>
+    </div>
+  </footer>
 
-  <table>
-    <thead>
-      <tr>
-        <th colspan="8">Products List</th>
-      </tr>
-      <tr>
-        <th>ref</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>reference</td>
-        <td>product's name</td>
-        <td>product's price</td>
-        <td>product's description</td>
-      </tr>
-    </tbody>
-  </table>
 
 </body>
 </html>
