@@ -99,11 +99,18 @@ div#bios h2 {
   color: black;
 }
 
+div#bios img {
+  width: 300px;
+  height: 300px;
+}
+
 div.bio-1, div.bio-2 {
   width: 35%;
   height: 100%;
   float: left;
   box-sizing: border-box;
+  border-radius: 25px;
+  text-align: center;
 }
 
 div.bio-1 {
@@ -177,6 +184,7 @@ section.inputs {
   box-sizing: border-box;
 }
 
+/* Tableur liste des Products */
 section.list {
   width: 62vw;
   height: 100vh;
@@ -210,6 +218,7 @@ table, th, td {
   border-collapse: collapse;
   background: white;
   padding: 20px;
+  text-align: center;
 }
 
 table tbody:nth-of-type(2n+1) {
